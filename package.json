@@ -1,0 +1,16 @@
+{
+  "name": "enov8-send-instance",
+  "version": "1.0.0",
+  "description": "GitHub Action to send system instance version to Enov8",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js -o dist"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.0"
+  }
+}

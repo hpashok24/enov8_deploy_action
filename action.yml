@@ -1,0 +1,25 @@
+name: 'Send SystemInstance Info to Enov8'
+description: 'Send version and resource name to Enov8 SystemInstance API'
+inputs:
+  version:
+    description: 'Version to be sent'
+    required: true
+  system:
+    description: 'System name (e.g., GDW (DEV))'
+    required: true
+  environment:
+    description: 'Environment name (e.g., DEV)'
+    required: true
+  app_id:
+    description: 'Enov8 app-id'
+    required: true
+  app_key:
+    description: 'Enov8 app-key'
+    required: true
+  enov8_url:
+    description: 'Full API URL (from secret)'
+    required: true
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
