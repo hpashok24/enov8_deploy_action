@@ -1,5 +1,5 @@
 name: 'Enov8 Release Sync Github Action'
-description: 'Push real-time updates on environment status, deployments, and version info to Enov8 — improving visibility, governance, and auditability across your IT landscape.'
+description: 'Push real-time updates on environment status, deployments, and version info to Enov8.'
 inputs:
   version:
     description: 'Version to be sent'
