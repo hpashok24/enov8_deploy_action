@@ -35838,6 +35838,7 @@ async function run() {
     };
 
     const headers = {
+      'user-id': appId,
       'app-id': appId,
       'app-key': appKey,
       'Content-Type': 'application/json'
