@@ -1,0 +1,21 @@
+# .github/workflows/enov8-deploy.yml
+name: Enov8 Deploy
+
+on:
+  workflow_dispatch:   # manual trigger from Actions tab
+  # push:
+  #   branches: [ main ]   # or any trigger you like
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Enov8 Deploy Action
+        uses: hpashok24/enov8_deploy_action@main   # or @v1 after you tag a release
+        with:
+          version: "18.0.0"
+          system: "GDW"
+          environment: "Dev"
+          app_id:  ${{ secrets.ENOV8_APP_ID }}
+          app_key: ${{ secrets.ENOV8_APP_KEY }}
+          enov8_url: ${{ secrets.ENOV8_BASE_URL }}
