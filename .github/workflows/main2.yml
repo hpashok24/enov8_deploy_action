@@ -11,7 +11,7 @@ jobs:
       - name: Run Enov8 Deploy Action
         uses: hpashok24/enov8_deploy_action@main   # or @v1 if tagged
         with:
-          version: "18.0.0"
+          version: "18.0.1"
           system: "GDW"
           environment: "DEV Env"                # <-- this is your Enov8 input
           app_id:  ${{ secrets.ENOV8_APP_ID }}
