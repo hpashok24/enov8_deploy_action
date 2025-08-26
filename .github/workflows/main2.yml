@@ -13,7 +13,7 @@ jobs:
         with:
           version: "18.0.0"
           system: "GDW"
-          environment: "Production"                # <-- this is your Enov8 input
+          environment: "DEV Env"                # <-- this is your Enov8 input
           app_id:  ${{ secrets.ENOV8_APP_ID }}
           app_key: ${{ secrets.ENOV8_APP_KEY }}
           enov8_url: ${{ secrets.ENOV8_BASE_URL }}
