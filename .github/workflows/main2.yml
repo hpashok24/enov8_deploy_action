@@ -1,0 +1,25 @@
+name: Enov8 Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Production   # <-- unlocks Environment secrets
+    steps:
+      - name: Run Enov8 Deploy Action
+        uses: hpashok24/enov8_deploy_action@main   # or @v1 if tagged
+        with:
+          version: "18.0.0"
+          system: "GDW"
+          environment: "Production"                # <-- this is your Enov8 input
+          app_id:  ${{ secrets.ENOV8_APP_ID }}
+          app_key: ${{ secrets.ENOV8_APP_KEY }}
+          enov8_url: ${{ secrets.ENOV8_BASE_URL }}
+      
+      - name: Check secrets presence
+        run: |
+          [ -z "${{ secrets.ENOV8_APP_ID }}" ] && echo "::error::ENOV8_APP_ID missing" || echo "ENOV8_APP_ID present"
+          [ -z "${{ secrets.ENOV8_APP_KEY }}" ] && echo "::error::ENOV8_APP_KEY missing" || echo "ENOV8_APP_KEY present"
+          [ -z "${{ secrets.ENOV8_BASE_URL }}" ] && echo "::error::ENOV8_BASE_URL missing" || echo "ENOV8_BASE_URL present"
